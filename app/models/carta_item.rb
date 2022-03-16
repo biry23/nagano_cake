@@ -1,0 +1,2 @@
+class CartaItem < ApplicationRecord
+end
