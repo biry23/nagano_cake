@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :show, :confirm, :complete, :create]
     resources :addresses, only: [:edit, :index, :create, :update, :destroy]
   end
-  
+
   devise_for :admins
   # adminのアクション
   namespace :admin do
