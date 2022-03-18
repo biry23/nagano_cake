@@ -3,13 +3,14 @@ class Admin::GenresController < ApplicationController
     @genres = Genre.all
   end
   
-  def edit
-  end
-  
   def create
+  end
+
+  def edit
+    @genre = Genre.find(parames[:id])
   end
   
   def update
   end
-  
+
 end
