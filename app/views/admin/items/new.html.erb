@@ -1,0 +1,5 @@
+<h2>商品新規登録</h2>
+<%= form_with model: @item, url: admin_item_path, method: :POST do |f| %>
+<%= f.file_field :image %>
+
+
