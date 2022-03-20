@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <h2>商品詳細</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th>商品名
+            <td><%= @item.name %></td>
+          </th>
+          <th>商品説明
+            <td><%= @item.introduction %></td>
+          </th>
+          <th>ジャンル
+            <td><%= @item.genre.name %></td>
+          </th>
+          <th>税込価格(税抜価格)</br>
+            <td><%= @item.price %>円</td>
+          </th>
+          <th>販売ステータス
+            <% if @item.is_active == true %>
+            <tb>
+              販売中
+            <% else @item.is_active == false %>
+              販売停止中
+            </tb>
+            <% end %>
+          </th>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
