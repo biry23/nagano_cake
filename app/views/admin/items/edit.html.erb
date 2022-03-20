@@ -1,12 +1,9 @@
 <div class="container">
-
   <div class="row">
-    <h2>商品新規登録</h2>
-
-    <%= form_with model: @item, url: admin_items_path, method: :POST do |f| %>
+    <h2>商品編集</h2>
+    <%= form_with model: @item, url: admin_item_path(item.id), method: :PATCH do |f| %>
     <p>商品画像</p>
     <%= f.file_field :image, accept: "image/*" %>
-
     <p>商品名</p>
     <%= f.text_field :name %>
 
@@ -26,8 +23,7 @@
     <!--<= f.radio_button :保存先のカラム名, "送る値" %>-->
     <!--is_activeの送れる値はtrue,falseの二つのみ-->
 
-    <p><%= f.submit '新規登録' %></p>
-    
+    <p><%= f.submit '変更を保存' %></p>
     <% end %>
   </div>
 </div>
