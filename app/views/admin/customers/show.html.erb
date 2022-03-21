@@ -1,5 +1,5 @@
 <h2>
-  <%= @customer.name %>さんの会員詳細
+  <%= @customer.first_name %> <%= @customer.last_name %>さんの会員詳細
 </h2>
 
 <table>
@@ -11,19 +11,19 @@
     </tr>
     <tr>
       <th>氏名</th>
-      <td><%= @customer.name %></td>
+      <td><%= @customer.first_name %> <%= @customer.last_name %></td>
     </tr>
     <tr>
       <th>フリガナ</th>
-      <td></td>
+      <td><%= @customer.first_name_kana %> <%=  @customer.last_name_kana %></td>
     </tr>
     <tr>
       <th>郵便番号</th>
-      <td></td>
+      <td><%= @customer.postal_code %></td>
     </tr>
     <tr>
       <th>住所</th>
-      <td></td>
+      <td><%= @customer.address %></td>
     </tr>
     <tr>
       <th>電話番号</th>
@@ -31,14 +31,14 @@
     </tr>
     <tr>
       <th>メールアドレス</th>
-      <td><%= customer.email %></td>
+      <td><%= @customer.email %></td>
     </tr>
     <tr>
       <th>会員ステータス</th>
       <td>
-        <% if customer.is_deleted == true %>
+        <% if @customer.is_deleted == true %>
         有効
-        <% else customer.is_deleted == false %>
+        <% else @customer.is_deleted == false %>
         退会
         <% end %>
       </td>
