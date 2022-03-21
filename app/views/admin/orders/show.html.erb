@@ -1,0 +1,8 @@
+<% @orders.each do |order| %>
+    <tr>
+      <td><%= link_to order.created_at, admin_order_path(order.id) %></td>
+      <td><%= order.name %></td>
+      <td><%= order. %></td>
+      <td></td>
+    </tr>
+    <% end %>
