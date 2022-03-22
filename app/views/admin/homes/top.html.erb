@@ -19,8 +19,9 @@
       <td><%= link_to order.created_at, admin_order_path(order.id) %></td>
       <td><%= order.name %></td>
       <td><%= total %></td>
-      <td></td>
+      <td><%= order.status %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= paginate @orders %>
