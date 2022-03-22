@@ -14,3 +14,12 @@ ja:
         production: "製作中"
         ready_to_ship: "発送準備中"
         sent: "発送済み"
+
+ja:
+  enums:
+    order_detail:
+      maiking_status:
+        not_produced: "製作不可"
+        waiting_for_deposit: "製作待ち"
+        production: "製作中"
+        complete: "製作完了"
