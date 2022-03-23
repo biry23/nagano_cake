@@ -1,9 +1,11 @@
 <div class="container">
-  <div class=""
-</div>
-<h2>管理者ログイン</h2>
+  <h2>管理者ログイン</h2>
+  <div class="row">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  </div>
+</div>
+
   <div class="field">
     <%= f.label :メールアドレス %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
