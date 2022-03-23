@@ -1,34 +1,39 @@
 <div class="container">
   <div class="row">
-    <h2>商品詳細</h2>
+    <div class="col-md-auto md-3 bg-light">
+      <h2>商品詳細</h2>
+    </div>
+  </div>
     <table>
       <tbody>
         <tr>
-          <th>商品名
-            <td><%= @item.name %></td>
-          </th>
-          <th>商品説明
-            <td><%= @item.introduction %></td>
-          </th>
-          <th>ジャンル
-            <td><%= @item.genre.name %></td>
-          </th>
-          <th>税込価格(税抜価格)</br>
-            <td><%= @item.price %>(円</td>
-          </th>
-          <th>販売ステータス
-            <% if @item.is_active == true %>
-            <tb>
-              販売中
-            <% else @item.is_active == false %>
-              販売停止中
-            </tb>
-            <% end %>
-          </th>
+          <th>商品名</th>
+          <td><%= @item.name %></td>
+        </tr>
+        <tr>
+          <th>商品説明</th>
+          <td><%= @item.introduction %></td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= @item.genre.name %></td>
+        </tr>
+        <tr>
+          <th>税込価格(税抜価格)</th>
+          <td><%= @item.price %>(円</td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td>
+          <% if @item.is_active == true %>
+            販売中
+          <% else @item.is_active == false %>
+            販売停止中
+          <% end %>
+          </td>
         </tr>
       </tbody>
     </table>
     <%= link_to "編集する", edit_admin_item_path(@item.id) %>
-  </div>
 </div>
 
