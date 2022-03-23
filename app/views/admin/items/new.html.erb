@@ -1,33 +1,50 @@
 <div class="container">
 
   <div class="row">
-    <h2>商品新規登録</h2>
+    <div class="p-3 mb-2 bg-secondary text-black">
+    <h4>商品新規登録</h4>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <%= form_with model: @item, url: admin_items_path, method: :POST do |f| %>
+        <tr>
+          <th>商品画像</th>
+          <td><%= f.file_field :image, accept: "image/*" %></td>
+        </tr>
+        <tr>
+          <th>商品名</th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <th>商品説明</th>
+          <td><%= f.text_area :introduction %></td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "-- 選択してください --" %></td>
+          <!-- f.collection_select :保存先のカラム名, 選択肢に使うオブジェクト, :一つ目の引数に渡す値, :選択肢に使うカラム名, include_blank: "選択して下さい" -->
+        </tr>
+        <tr>
+          <th>税抜価格</th>
+          <td><%= f.text_field :price %>円</td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td>
+            <%= f.radio_button :is_active, true %>販売中
+            <%= f.radio_button :is_active, false %>販売停止中
+            <!--<= f.radio_button :保存先のカラム名, "送る値" %>-->
+            <!--is_activeの送れる値はtrue,falseの二つのみ-->
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.submit '新規登録' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-    <%= form_with model: @item, url: admin_items_path, method: :POST do |f| %>
-    <p>商品画像</p>
-    <%= f.file_field :image, accept: "image/*" %>
-
-    <p>商品名</p>
-    <%= f.text_field :name %>
-
-    <p>商品説明</p>
-    <%= f.text_area :introduction %>
-    <p>ジャンル</p>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "-- 選択してください --" %>
-    <!-- f.collection_select :保存先のカラム名, 選択肢に使うオブジェクト, :一つ目の引数に渡す値, :選択肢に使うカラム名, include_blank: "選択して下さい" -->
-
-
-    <p>税抜価格</p>
-    <%= f.text_field :price %>円
-
-    <p>販売ステータス</p>
-    <%= f.radio_button :is_active, true %>販売中
-    <%= f.radio_button :is_active, false %>販売停止中
-    <!--<= f.radio_button :保存先のカラム名, "送る値" %>-->
-    <!--is_activeの送れる値はtrue,falseの二つのみ-->
-
-    <p><%= f.submit '新規登録' %></p>
-     
-    <% end %>
   </div>
 </div>
