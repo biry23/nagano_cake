@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <th>注文ステータス</th>
-      <td><%= @order.status %> <%= link_to "更新", admin_order_path(@order.id) %></td>
+      <td><%= @order.status %> <%= link_to "更新", admin_order_path(@order.id), class:"btn btn-success" %></td>
     </tr>
   </thead>
   <tbody>
@@ -37,7 +37,7 @@
       <td><%= order_detail.amount.count %></td>
       <td><%= order_detail.price %></td>
       <td><%= order.maiking_status * order_detail.price %></td>
-      <td><%= link_to "更新", admin_order_path(order.id) %></td>
+      <td><%= link_to "更新", admin_order_path(order.id), class:"btn btn-success" %></td>
     </tr>
     <% end %>
   </tbody>
