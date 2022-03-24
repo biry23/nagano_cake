@@ -6,32 +6,34 @@
     <div class="col-md-8"></div>
   </div>
   <div class="row">
-    <%= form_with model: @genre, url: admin_genres_path, method: :POST do |f| %>
-        <p>ジャンル名</p>
-        <%= f.text_field :name %>
-        <%= f.submit '新規登録'%>
-    <% end %>
+    <div class="col-md-auto md-3">
+      <%= form_with model: @genre, url: admin_genres_path, method: :POST do |f| %>
+      <p>ジャンル名</p>
+      <%= f.text_field :name %>
+      <%= f.submit '新規登録'%>
+      <% end %>              
+    </div>
+    
   </div>
   <div class="row">
-    <table>
+    <table class="table">
       <thead class="col-md-auto md-3 bg-light">
         <tr>
           <th>ジャンル</th>
           <th></th>
         </tr>
       </thead>
-
       <tbody class="table">
        <% @genres.each do |genre| %>
          <tr>
            <th>
              <tb><%= genre.name %></tb>
-             <tb><%= link_to "編集する", edit_admin_genre_path(genre.id) %> </tb>
+             <tb><%= link_to "編集する", edit_admin_genre_path(genre.id), class:"btn btn-success" %> </tb>
            </th>
          </tr>
        <% end %>
-       </tbody>
-      </table>
+      </tbody>
+    </table>
   </div>
 </div>
 

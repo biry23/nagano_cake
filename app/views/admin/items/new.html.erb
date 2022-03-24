@@ -1,11 +1,10 @@
 <div class="container">
-
   <div class="row">
-    
-    <h4>商品新規登録</h4>
+    <div class="col-md-auto mb-3 bg-light">
+      <h4>商品新規登録</h4>
     </div>
   </div>
-  <div class="row">
+  <div class="field row mx-auto">
     <table class="table">
       <tbody>
         <%= form_with model: @item, url: admin_items_path, method: :POST do |f| %>
