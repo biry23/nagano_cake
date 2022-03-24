@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
-
+  root "public/homes#top"
   # publicのアクション
   scope module: 'public' do
     resources :homes, only: [:top, :about]
@@ -29,6 +29,6 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :index, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
+  root to: "homes#top"
   end
-  root to: "admin/homes#top"
 end

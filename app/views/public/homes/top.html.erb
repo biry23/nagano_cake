@@ -1,5 +1,25 @@
 <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+      <p>ようこそ、ながのCAKEへ！</p>
+      <p>このサイトは、ケーキ販売のECサイトになります。</p>
+      <p>会員でない方も商品の閲覧はできますが、</p>
+      <p>購入には会員登録が必要になります。</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
   <div class="row">
-  
+    <h4>新着商品</h4>
+  </div>
+  <div class="row">
+    <% @items.each do |item| %>
+    <p>image画像</p>
+    <p><%= item.name %></p>
+    <p>￥<%= item.price %></p>
+    <% end %>
+  </div>
+  <div class="text-left">
+    <%= link_to "全ての商品を見る＞", items_path %>
   </div>
 </div>
