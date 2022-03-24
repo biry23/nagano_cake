@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
-  root "public/homes#top"
+  root to: "public/homes#top"
+  get "/about" => "public/homes#about", as: "about"
   # publicのアクション
   scope module: 'public' do
     resources :homes, only: [:top, :about]
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   # adminのアクション
   namespace :admin do
     resources :sessions, only: [:new, :create, :destroy]
-    resources :homes, only: [:top]
+    resources :homes, only: [:top, :about]
     resources :items, only: [:new, :index, :create, :show, :edit, :update]
     resources :genres, only: [:edit, :index, :create, :update]
     resources :customers, only: [:show, :index, :edit, :update]
