@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-auto sm-3 bg-light">
+      <h4>マイページ</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4>登録情報</h4>
+    <%= link_to "編集する", edit_customer_registration_path %>
+  </div>
+
+  <div class="row">
+    <table>
+      <tbody>
+        <tr>
+          <th>氏名</th>
+          <td><%= @customer.last_name %> <%= @customer.first_name %></td>
+        </tr>
+        <tr>
+          <th>カナ</th>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
