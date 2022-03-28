@@ -17,9 +17,31 @@
     </div>
     <div class="col-sm-8">
       <%= form_with model: @customer, url: customer_registration_path do |f| %>
-      (姓) <%= text_field :last_name %>
-      (名) <%= text_field :first_name %>
+      <p>
+        (姓) <%= f.text_field :last_name %>
+        (名) <%= f.text_field :first_name %>
+      </p>
+      <p>
+        (セイ) <%= f.text_field :last_name_kana %>
+        (メイ) <%= f.text_field :first_name_kana %>
+      </p>
+      <p><%= f.text_field :postal_code %></p>
+      <p><%= f.text_field :address %></p>
+      <p><%= f.text_field :telephone_number %></p>
+      <p><%= f.text_field :encrypted_password %></p>
+      <p><%= f.text_field :encrypted_password %></p>
+      <p><%= f.submit '新規登録', class:"btn btn-success" %></p>
       <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-auto sm-3 bg-light">
+      <h4>すでに登録済みの方</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-auto">
+      <%= link_to "こちら", customer_session_path %>からログインしてください。
     </div>
   </div>
 </div>
