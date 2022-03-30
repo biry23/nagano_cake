@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <%#= link_to "ログアウト", destroy_customer_session_path %>
+    <%#= link_to "Adminログアウト", destroy_admin_session_path %>
+
+
     <%= yield %>
   </body>
 </html>

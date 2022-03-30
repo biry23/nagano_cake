@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :customers,skip: [:passwords], controllers: {
-  registrations: "public/registrations",
-  sessions: 'public/sessions'
+  registrations: "public/customers/registrations",
+  sessions: 'public/customers/sessions'
 }
-  root to: "public/homes#top"
-  get "/about" => "public/homes#about", as: "about"
+
   # publicのアクション
   scope module: 'public' do
+    root to: "homes#top"
+    get "/about" => "homes#about", as: "about"
     resources :homes, only: [:top, :about]
     resources :items, only: [:show, :index]
     resources :registrations, only: [:new, :create]
@@ -30,6 +31,6 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :index, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
-  root to: "homes#top"
+    root to: "homes#top"
   end
 end
