@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     root to: "homes#top"
     get "/about" => "homes#about", as: "about"
-    get "/customers/my_page" => "customers#show"
+    get "/customers/my_page" => "customers#show", as: "customers"
     get "/customers/edit" => "customers#edit"
     patch "/customers" => "customers#update"
     get "/customers/confirm" => "customers#confirm"
