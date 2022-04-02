@@ -25,8 +25,6 @@ class Admin::GenresController < ApplicationController
     else
       render :index
     end
-
-
   end
 
   private

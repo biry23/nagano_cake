@@ -8,7 +8,7 @@
 
 <table>
   <tbody>
-    <% form_with model: @customer, url: admin_customer_path, method: :PATCH do |f| %>
+    <%= form_with model: @customer, url: admin_customer_path, method: :PATCH do |f| %>
     <tr>
       <th>会員ID</th>
       <td><%= @customer.id %></td>
