@@ -14,7 +14,7 @@
   </div>
   <div class="row">
     <% @items.each do |item| %>
-    <p>image画像</p>
+    <p><%= image_tag item.image, size: "200x200" %></p>
     <p><%= item.name %></p>
     <p>￥<%= item.price %></p>
     <% end %>
