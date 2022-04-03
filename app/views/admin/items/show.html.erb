@@ -4,40 +4,47 @@
       <h2>商品詳細</h2>
     </div>
   </div>
-    <table class="table">
-      <tbody>
-        <tr>
-          <th>商品名</th>
-          <td><%= @item.name %></td>
-        </tr>
-        <tr>
-          <th>商品説明</th>
-          <td><%= @item.introduction %></td>
-        </tr>
-        <tr>
-          <th>ジャンル</th>
-          <td><%= @item.genre.name %></td>
-        </tr>
-        <tr>
-          <th>税込価格(税抜価格)</th>
-          <td><%= @item.price %>円</td>
-        </tr>
-        <tr>
-          <th>販売ステータス</th>
-          <td>
-          <% if @item.is_active == true %>
-            販売中
-          <% else @item.is_active == false %>
-            販売停止中
-          <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="row">
-      <div class="field row mx-auto">
-        <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success" %>
-      </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @item.image, size: "200x200" %>
     </div>
+    <div class="col-md-6">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>商品名</th>
+            <td><%= @item.name %></td>
+          </tr>
+          <tr>
+            <th>商品説明</th>
+            <td><%= @item.introduction %></td>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <td><%= @item.genre.name %></td>
+          </tr>
+          <tr>
+            <th>税込価格(税抜価格)</th>
+            <td><%= @item.price %>円</td>
+          </tr>
+          <tr>
+            <th>販売ステータス</th>
+            <td>
+            <% if @item.is_active == true %>
+              販売中
+            <% else @item.is_active == false %>
+              販売停止中
+            <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field row mx-auto">
+      <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success" %>
+    </div>
+  </div>
 </div>
 
