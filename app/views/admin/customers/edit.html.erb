@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-auto md-3 bg-light">
-      <h2><%= @customer.first_name %> <%= @customer.last_name %>さんの会員情報編集</h2>
+      <h2><%= @customer.last_name %> <%= @customer.first_name %>さんの会員情報編集</h2>
     </div>
   </div>
 </div>
@@ -16,15 +16,15 @@
     <tr>
       <th>氏名</th>
       <td>
-        <%= f.text_field :first_name %>
         <%= f.text_field :last_name %>
+        <%= f.text_field :first_name %>
       </td>
     </tr>
     <tr>
       <th>フリガナ</th>
       <td>
-        <%= f.text_field :first_name_kana %>
         <%= f.text_field :last_name_kana %>
+        <%= f.text_field :first_name_kana %>
       </td>
     </tr>
     <tr>
@@ -51,7 +51,7 @@
       </td>
     </tr>
     <tr>
-      <%= f.submit '変更を保存', class:"btn btn-success" %>
+      <td><%= f.submit '変更を保存', class:"btn btn-success" %></td>
     </tr>
     <% end %>
   </tbody>
