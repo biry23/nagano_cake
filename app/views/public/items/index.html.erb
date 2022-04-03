@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h2>商品一覧</h2>
+    <%#= @item.where.count %>
+  </div>
+  <div class="row">
+    <% @items.each do |item| %>
+    <%= image_tag item.iage, size: "200*200", url: item_path %></br>
+    <%= item.name %></br>
+    ￥<%= item.price %>
+    <% end %>
+  </div>
+</div>
