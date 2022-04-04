@@ -1,24 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag item.image, size: "300*300" %>
+      <%= image_tag @item, size: "300*300" %>
     </div>
 
     <div class="col-md-5">
       <h4><%= @item.name %></h4>
       <%= @item.introduction %></br>
       ￥<%= @item.price %>(税込)</br>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          個数選択
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li class="dropdown-item">1</li>
-          <li class="dropdown-item">2</li>
-          <li class="dropdown-item">3</li>
-        </div>
-      </div>
-      <%= link_to "カートに入れる", cart_items_path %>
+      <%= form_with model: @cart_item, url: cart_items_path do |f| %>
+        <%= f.select :amount, [['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8]] %>
+        <%= f.hidden_field :item_id, :value => @item.id %>
+        <%= f.submit "カートに入れる" %>
+      <% end %>
     </div>
   </div>
 </div>

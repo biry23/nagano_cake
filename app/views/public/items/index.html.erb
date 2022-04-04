@@ -5,9 +5,11 @@
   </div>
   <div class="row">
     <% @items.each do |item| %>
-    <%= image_tag item.image, size: "200x200", url: item_path(item.id) %></br>
-    <%= item.name %></br>
-    ￥<%= item.price %>
+      <%= link_to item_path(item.id) do %>
+        <%= image_tag item.image, size: "200x200" %>
+      <% end %></br>
+      <%= item.name %></br>
+      ￥<%= item.price %>
     <% end %>
   </div>
 </div>
