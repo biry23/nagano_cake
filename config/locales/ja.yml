@@ -5,9 +5,6 @@ ja: # 日本語の設定を行う
         credit_card: "クレジットカード" # enumで番号と紐付けた要素
         transfer: "銀行振込" # enumで番号と紐付けた要素(要素の数だけ追加する)
 
-ja:
-  enums:
-    order:
       status:
         waiting_for_deposit: "入金待ち"
         payment_confirmation: "入金確認"
@@ -15,8 +12,6 @@ ja:
         ready_to_ship: "発送準備中"
         sent: "発送済み"
 
-ja:
-  enums:
     order_detail:
       maiking_status:
         not_produced: "製作不可"

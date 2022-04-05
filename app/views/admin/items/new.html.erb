@@ -7,7 +7,7 @@
   <div class="field row mx-auto">
     <table class="table">
       <tbody>
-        <%= form_with model: @item, url: admin_items_path, method: :POST do |f| %>
+        <%= form_with model: @item, url: admin_items_path do |f| %>
         <tr>
           <th>商品画像</th>
           <td><%= f.file_field :image, accept: "image/*" %></td>
