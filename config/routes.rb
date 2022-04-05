@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     patch "/customers" => "customers#update"
     get "/customers/confirm" => "customers#confirm"
     patch "/customers/withdraw" => "customers#withdraw"
-    delete "/cart_items/destroy_all" => "cartitems#destroy_all"
+    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     post "/orders/confirm" => "orders#confirm"
     get "/orders/complete" => "orders#complete"
     resources :items, only: [:show, :index]
