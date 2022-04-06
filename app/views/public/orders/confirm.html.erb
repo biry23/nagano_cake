@@ -3,7 +3,7 @@
     <h4>注文確認</h4>
   </div>
   <div class="row">
-    <tabl class="table">
+    <table class="table">
       <thead>
         <tr>
           <th>商品名</th>
@@ -41,6 +41,12 @@
       <%= current_customer.address %>
       <%= current_customer.full_name %>
     </p>
-    <%= link_to "注文を確定する", orders_complete_path %>
+
+    <%= form_with model: @cart_item, url: orders_path do |f| %>
+    
+
+    <%= f.submit "注文を確定する" %>
+
+    <%end%>
   </div>
 </div>
