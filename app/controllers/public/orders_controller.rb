@@ -19,6 +19,10 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+    @cart_items = current_customer.cart_items.all
+    @total_price = 0
+    @order = Order.new(order_params)
+    @postage = 800
   end
 
   def complete
