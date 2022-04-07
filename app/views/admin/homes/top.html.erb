@@ -21,10 +21,7 @@
         </thead>
         <tbody>
         <% @orders.each do |order| %>
-        <% total = 0 %>
-        <% order.order_details.each do |order_detail| %>
-        <% total = total + order_detail.amount %>
-        <% end %>
+          <% total = 0 %>
           <tr>
             <td><%= link_to order.created_at, admin_order_path(order.id) %></td>
             <td><%= order.name %></td>
