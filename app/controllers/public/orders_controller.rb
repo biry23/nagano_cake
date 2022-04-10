@@ -9,12 +9,16 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order.shipping_cost = 800
+    @total_price = 0
+    @order_details = @order.order_details
   end
 
   def create
     # 注文の保存
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
+    @order.status = 0
     if @order.save
       # 注文詳細商品一つ一つの保存
       @cart_items = current_customer.cart_items
