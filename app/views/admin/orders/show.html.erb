@@ -19,7 +19,10 @@
     </tr>
     <tr>
       <th>注文ステータス</th>
-      <td><%= @order.status %> <%= link_to "更新", admin_order_path(@order.id), class:"btn btn-success" %></td>
+      <td>
+        <%= @order.status_i18n %>
+        <%= link_to "更新", admin_order_path(@order.id), class:"btn btn-success" %>
+      </td>
     </tr>
   </thead>
   <tbody>
@@ -31,14 +34,16 @@
       <th>製作ステータス</th>
     </tr>
     <% @order_detail.each do |order_detail| %>
-    <tr>
-      <td><%= @order.name %></td>
-      <td><%= order_detail.price %></td>
-      <td><%= order_detail.amount.count %></td>
-      <td><%= order_detail.price %></td>
-      <td><%= order.maiking_status * order_detail.price %></td>
-      <td><%= link_to "更新", admin_order_path(order.id), class:"btn btn-success" %></td>
-    </tr>
+      <tr>
+        <td><%= @order.name %></td>
+        <td><%= order_detail.price %></td>
+        <td><%= order_detail.amount %></td>
+        <td><%= order_detail.price %></td>
+        <%= form_with model: @order_detail, url: admin_order_path, method: :patch do |f| %>
+          <td><%= f.select :maiking_status, OrderDetail.maiking_statuses_i18n.invert {prompt: false} %>%> %></td>
+        <% end %>
+        <td><%= link_to "更新", admin_order_path(@order.id), class:"btn btn-success" %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
