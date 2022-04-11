@@ -11,6 +11,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.shipping_cost = 800
     @total_price = 0
+    @subtotal = 0
     @order_details = @order.order_details
   end
 
