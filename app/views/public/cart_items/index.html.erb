@@ -20,8 +20,10 @@
           <td><%= cart_item.item.name %></td>
           <td><%= cart_item.item.with_tax_price%></td>
           <td>
-            <%= cart_item.amount %>
-            <%= link_to "変更", cart_items_path %>
+            <%= form_with model: cart_item, url: cart_item_path(cart_item), method: :patch do |f| %>
+              <%= f.select :amount, [['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8]] %>
+              <%= f.submit "更新" %>
+            <% end %>
           </td>
           <td><%= cart_item.subtotal%></td>
           <% @total_price += cart_item.subtotal %>
