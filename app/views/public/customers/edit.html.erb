@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-sm-auto sm-3 bg-light">
@@ -6,7 +7,7 @@
   </div>
   <table>
     <tbody>
-      <%= form_with model: @customer, url: customers_path, method: :patch do |f| %>
+      <%= form_with model: @customer, url: customers_update_path, method: :patch do |f| %>
       <tr>
         <th>氏名</th>
         <td>

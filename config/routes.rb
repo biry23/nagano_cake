@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "/about" => "homes#about", as: "about"
     get "/customers/my_page" => "customers#show", as: "customers"
     get "/customers/edit" => "customers#edit"
-    patch "/customers" => "customers#update"
+    patch "/customers" => "customers#update", as: "customers_update"
     get "/customers/confirm" => "customers#confirm"
     patch "/customers/withdraw" => "customers#withdraw"
     delete "/cart_items/destroy_all" => "cart_items#destroy_all"
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   # adminのアクション
   namespace :admin do
     root to: "homes#top"
+    patch "/orders/:id/status" => "orders#status_update", as: "status" # 注文ステータスupdate
+    patch "/orders/:id/making_status" => "orders#making_status_update", as: "making_status" # 製作ステータスupdate
     resources :items, only: [:new, :index, :create, :show, :edit, :update]
     resources :genres, only: [:edit, :index, :create, :update]
     resources :customers, only: [:show, :index, :edit, :update]
