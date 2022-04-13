@@ -14,7 +14,13 @@ class Public::CustomersController < ApplicationController
     end
   end
 
-  def destroy
+  def withdraw
+    @customer = current_customer
+    if @customer.update(is_deleted: true)
+      # 退会ステータスをデフォルトのfalse(有効)から、true(退会)に更新させる
+      sign_out current_customer
+    end
+    redirect_to root_path
   end
 
   private
