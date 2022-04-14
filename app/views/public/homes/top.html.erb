@@ -1,29 +1,35 @@
-<div class="container">
+<div class="container my-5">
   <div class="row justify-content-center">
-    <div class="col-md-2"></div>
-    <div class="col-md-7">
+    <div class="col-md-12 text-center">
       <p>ようこそ、ながのCAKEへ！</p>
       <p>このサイトは、ケーキ販売のECサイトになります。</p>
       <p>会員でない方も商品の閲覧はできますが、</p>
       <p>購入には会員登録が必要になります。</p>
     </div>
-    <div class="col-md-3"></div>
   </div>
-  <div class="row">
-    <h4>新着商品</h4>
+  <div class="row my-3">
+    <h4>
+      新着商品
+    </h4>
   </div>
   <div class="row">
     <% @items.each do |item| %>
-    <p>
-      <%= link_to item_path(item.id) do %>
-        <%= image_tag item.image, size: "200x200" %>
-      <% end %>
-    </p>
-    <p><%= item.name %></p>
-    <p>￥<%= item.price %></p>
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <%= link_to item_path(item.id) do %>
+          <div class="p-2 bd-highlight">
+            <%= image_tag item.image, size: "200x200" %>
+          </div>
+        <% end %>
+        <div class="p-2 bd-highlight">
+          <%= item.name %>
+        </div>
+        <div class="p-2 bd-highlight">
+          ￥<%= item.price %>
+        </div>
+      </div>
     <% end %>
   </div>
-  <div class="text-left">
+  <div class="text-right">
     <%= link_to "全ての商品を見る＞", items_path %>
   </div>
 </div>

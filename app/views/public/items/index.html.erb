@@ -1,15 +1,22 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
     <h2>商品一覧</h2>
-    <%#= @item.where.count %>
   </div>
-  <div class="row">
+  <div class="row my-3">
     <% @items.each do |item| %>
-      <%= link_to item_path(item.id) do %>
-        <%= image_tag item.image, size: "200x200" %>
-      <% end %></br>
-      <%= item.name %></br>
-      ￥<%= item.price %>
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <%= link_to item_path(item.id) do %>
+          <div class="p-2 bd-highlight">
+            <%= image_tag item.image, size: "200x200" %>
+          </div>
+        <% end %>
+        <div class="p-2 bd-highlight">
+          <%= item.name %>
+        </div>
+        <div class="p-2 bd-highlight">
+          ￥<%= item.price %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
