@@ -29,7 +29,7 @@ class Public::OrdersController < ApplicationController
         @order_detail.item_id = cart_item.item.id
         @order_detail.price = cart_item.item.with_tax_price
         @order_detail.amount = cart_item.amount
-        @order_detail.maiking_status = 0
+        @order_detail.making_status = 0
         @order_detail.save
       end
       current_customer.cart_items.destroy_all
