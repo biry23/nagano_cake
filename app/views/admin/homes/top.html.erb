@@ -1,17 +1,15 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <div class="col-md-auto md-3 bg-light">
-      <h4>注文履歴一覧</h4>
+    <div class="col-md-auto bg-light">
+      <h4 class="font-weight-bold">
+        注文履歴一覧
+      </h4>
     </div>
-    <div class="col-md-8"></div>
   </div>
-
-
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+  <div class="row my-3">
+    <div class="col-md-12 text-center">
       <table class="table">
-        <thead>
+        <thead class="bg-light">
           <tr>
             <th>購入日時</th>
             <th>購入者</th>
@@ -35,10 +33,9 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-1"></div>
   </div>
-  <div class="row">
-    <div class="col-md-auto">
+  <div class="row my-2">
+    <div class="col-md-12 text-center">
       <%= paginate @orders %>
     </div>
   </div>
