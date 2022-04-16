@@ -65,7 +65,9 @@
   </div>
   <div class="row my-4">
     <div class="col text-center">
-      <%= link_to "注文情報入力に進む", new_order_path, class:"btn btn-success" %>
+      <% if @cart_items.count >= 1 %>
+        <%= link_to "注文情報入力に進む", new_order_path, class:"btn btn-success" %>
+      <% end %>
     </div>
   </div>
 </div>

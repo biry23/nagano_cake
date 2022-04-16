@@ -13,10 +13,7 @@
           <tbody>
             <tr>
               <th>商品画像</th>
-              <% if @item.image.attached? %>
-              <!--画像は存在しないものとして保存が実行されるif文-->
               <td><%= f.file_field :image, accept: "image/*" %></td>
-              <% end %>
             </tr>
             <tr>
               <th>商品名</th>

@@ -13,6 +13,9 @@ class Admin::OrdersController < ApplicationController
     # 注文ステータスのupdate
     @order = Order.find(params[:id])
     @order.update(order_params)
+    if params[:order][:status] == "入金確認"
+      order_details.update(order_detail_params)
+    end
     redirect_to admin_order_path(@order)
   end
 
