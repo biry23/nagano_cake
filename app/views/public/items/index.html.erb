@@ -1,6 +1,8 @@
 <div class="container my-5">
   <div class="row">
-    <h2>商品一覧</h2>
+    <h4 class="font-weight-bold">
+      商品一覧 (全<%= @items.count %>件)
+    </h4>
   </div>
   <div class="row my-3">
     <% @items.each do |item| %>
@@ -18,5 +20,10 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="row my-2">
+    <div class="col-md-12 text-center">
+      <%= paginate @items %>
+    </div>
   </div>
 </div>
